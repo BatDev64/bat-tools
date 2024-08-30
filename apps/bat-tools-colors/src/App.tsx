@@ -1,11 +1,12 @@
-import { useColorPaletteStore } from './store/useColorPalette'
 import { PaletteCard } from './components/PaletteCard/PaletteCard'
 import { Button } from './components/ui/Button/Button'
 import { Add } from './components/Icons/Add'
+import { usePalettes } from './Hooks/storeHooks/usePalettes'
+import { useCreatePalette } from './Hooks/storeHooks/useCreatePalette'
 
 function App() {
-  const palettes = useColorPaletteStore((state) => state.palettes)
-  const createPalette = useColorPaletteStore((state) => state.createPalette)
+  const palettes = usePalettes()
+  const createPalette = useCreatePalette()
 
   return (
     <div className='wrapper'>

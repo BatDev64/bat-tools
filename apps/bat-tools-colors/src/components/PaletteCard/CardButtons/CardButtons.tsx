@@ -1,8 +1,8 @@
+import { useRemovePalette } from '../../../Hooks/storeHooks/useRemovePalette'
 import { usePaletteCard } from '../../../Hooks/usePaletteCard'
-import { useColorPaletteStore } from '../../../store/useColorPalette'
 
 export function CardButtons() {
-  const removePaletee = useColorPaletteStore((state) => state.removePalette)
+  const removePaletee = useRemovePalette()
   const { palette, setModalIsOpen } = usePaletteCard()
   const { id } = palette
   return (
