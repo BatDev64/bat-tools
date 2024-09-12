@@ -1,22 +1,22 @@
-import { PaletteCardProvider } from '../../context/PaletteCard'
-import { type Palette as PaletteType } from '../../types'
-import { CardModal } from './CardModal/CardModal'
-
-import { CardHeader } from './CardHeader/CardHeader'
-import { CardPalette } from './CardPalette/CardPalette'
+import CardButton from './components/PaletteCardButton'
+import { CardColorPicker } from './components/PaletteCardColorPicker'
+import Header from './components/PaletteCardHeader'
+import { CardModal } from './components/PaletteCardModal'
+import Shades from './components/PaletteCardShades'
 
 interface PaletteCardProps {
-  colorPalette: PaletteType
+  children: React.ReactNode
 }
 
-export function PaletteCard({ colorPalette }: PaletteCardProps) {
-  return (
-    <PaletteCardProvider colorPalette={colorPalette}>
-      <div className='flex flex-col gap-4'>
-        <CardHeader />
-        <CardPalette />
-        <CardModal />
-      </div>
-    </PaletteCardProvider>
-  )
+export const PaletteCard = ({ children }: PaletteCardProps) => {
+  return <div>{children}</div>
+}
+
+PaletteCard.CardHeader = Header
+PaletteCard.CardPalette = Shades
+PaletteCard.CardButton = CardButton
+PaletteCard.CardColorPicker = CardColorPicker
+PaletteCard.CardModal = CardModal
+PaletteCard.CardBody = ({ children }: { children: React.ReactNode }) => {
+  return <section>{children}</section>
 }
