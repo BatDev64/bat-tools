@@ -1,5 +1,5 @@
 import chroma from 'chroma-js'
-import { type Shades } from '../types'
+import { Shades } from '../types'
 
 const sortByLuminance = (colors: Array<string>) => {
   return colors.sort((a, b) => {
@@ -14,38 +14,38 @@ const createShades = (colors: Array<string>) => {
     const shade =
       index == 0 ? 50
       : index === arr.length - 1 ? 950
-      : index * 100
+      : ((index * 100) as 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950)
     acc[shade] = el
     return acc
   }, {} as Shades)
 }
-export const generateColorScale = (color: string) => {
+
+export function generateColorScale(color: string) {
   const isValidColor = chroma.valid(color)
-  const currentColor = !isValidColor ? '000' : color
+  const DEFAULT_COLOR = '#2e2e2e'
+  const currentColor = isValidColor ? color : DEFAULT_COLOR
 
-  const luminance = Math.round(chroma(currentColor).get('hsl.l') * 100)
+  const luminance = chroma(currentColor).get('hsl.l') * 100
+  const isLightColor = luminance > 80 && luminance <= 99
+  const isDarkColor = luminance >= 0 && luminance <= 35
 
-  const isDarkColor = luminance >= 0 && luminance < 30
-  const isLightColor = luminance >= 90 && luminance <= 100
+  let lightColor = chroma(currentColor).set('hsl.l', 0.98).hex()
+  let darkColor = chroma(currentColor).set('hsl.l', 0.18).hex()
+  let middleColor = chroma(currentColor).set('hsl.l', 0.5).hex()
 
-  const lightColor = chroma(currentColor).set('hsl.l', 0.95).saturate(0.6).hex()
-  const darkColor = chroma(currentColor).set('hsl.l', 0.1).hex()
-  const color_500 = chroma(currentColor).set('hsl.l', 0.5).hex()
+  const isMoreLight = chroma(lightColor).get('hsl.l') <= luminance
+  /* const isMoreDark = chroma(darkColor).get('hsl.l') >= luminance */
 
-  const leftColor = isLightColor ? currentColor : lightColor
-  const rightColor = isDarkColor ? currentColor : darkColor
-  const middleColor = !(isLightColor || isDarkColor) ? currentColor : color_500
+  if (isLightColor && isMoreLight) {
+    lightColor = currentColor
+  } else if (isDarkColor) {
+    darkColor = currentColor
+  } else {
+    middleColor = currentColor
+  }
 
-  const H = chroma(currentColor).get('hsl.h')
-  const colorScale = chroma
-    .scale([leftColor, middleColor, rightColor])
-    .mode('lab')
-    .colors(11)
-    .map((el, i) => {
-      if (el === currentColor) return el
-      const h = luminance > Math.round(chroma(el).get('hsl.l') * 100) ? H - i : H + i
-      return chroma(el).set('hsl.h', h).hex()
-    })
+  const colorScale = chroma.scale([lightColor, middleColor, darkColor]).mode('hsl').colors(11)
+
   const sortedColors = sortByLuminance(colorScale)
   const shades = createShades(sortedColors)
 

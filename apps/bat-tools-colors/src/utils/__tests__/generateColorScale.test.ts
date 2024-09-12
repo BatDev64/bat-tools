@@ -1,13 +1,13 @@
 import { describe, it, expect } from 'vitest'
-import { generateColorScale } from '../generateColorScale'
+import { generateColorScale } from './../generateColorScale'
 import chroma from 'chroma-js'
 
 describe('generatePalette', () => {
-  it('should return an error if the color is invalid', () => {
-    const r = generateColorScale('#')
+  it('should return the color black if the color is invalid', () => {
+    const r = generateColorScale('z')
 
     expect(r).toMatchObject({
-      '950': '#000000'
+      '950': '#2e2e2e'
     })
   })
   it('the palette must contain the color original', () => {
