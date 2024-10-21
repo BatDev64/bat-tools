@@ -1,0 +1,14 @@
+{
+  "name": "bat-tools",
+  "version": "0.0.1",
+  "packageManager": "pnpm@9.12.2",
+  "description": "",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "3.3.3",
+    "vitest": "^2.1.3"
+  }
+}
