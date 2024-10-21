@@ -1,0 +1,20 @@
+{
+  "name": "@bat-tools/colors",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "BatDev64",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/node": "22.7.7",
+    "chroma-js": "3.1.2",
+    "eslint": "^9.13.0",
+    "globals": "^15.11.0",
+    "tsup": "8.3.0",
+    "typescript": "5.6.3",
+    "typescript-eslint": "^8.10.0"
+  }
+}
