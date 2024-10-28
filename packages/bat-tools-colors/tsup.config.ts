@@ -1,13 +1,19 @@
 import { defineConfig } from 'tsup'
 
-export default defineConfig({
-  entry: ['src/index.ts'],
+export default defineConfig((options) => ({
+  entry: ['src/index.ts', 'src/utils/index.ts'],
   format: ['cjs', 'esm'],
+  minify: !options.watch,
+  outExtension({ format }) {
+    return {
+      js: `.${format}.js`
+    }
+  },
   dts: true,
   sourcemap: true,
   clean: true,
-  target: 'es2019',
+  target: 'es2020',
   treeshake: true,
-  external: ['chroma-js']
-})
-
+  external: ['chroma-js', 'color-namer'],
+  ...options
+}))
