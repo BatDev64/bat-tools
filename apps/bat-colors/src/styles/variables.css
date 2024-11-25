@@ -49,23 +49,66 @@
   --size-144: 9rem; /* 144px */
 
   /* Font size */
-  --font-xs: 0.694rem; /* 11.11px */
-  --font-sm: 0.833rem; /*13.33px */
-  --font-md: 1rem; /*16px */
-  --font-lg: 1.2rem; /*19.2px */
-  --font-xl: 1.44rem; /*23.04px */
-  --font-2xl: 1.728rem; /*27.65px */
-  --font-3xl: 2.074rem; /*33.18px */
-  --font-4xl: 2.488rem; /*39.81px */
-  --font-5xl: 2.986rem; /*47.78px */
+  --font-xs: 0.75rem; /* 12px */
+  --font-sm: 0.875rem; /* 14px */
+  --font-md: 1rem; /* 16px */
+  --font-lg: 1.125rem; /* 18px */
+  --font-xl: 1.25rem; /* 20px */
+  --font-2xl: 1.5rem; /* 24px */
+  --font-3xl: 1.875rem; /* 30px */
+  --font-4xl: 2.25rem; /* 36px */
+  --font-5xl: 3rem; /* 48px */
+  --font-6xl: 3.75rem; /* 60px */
+
+  /* Radius */
+  --rounded-sm: var(--size-2);
+  --rounded: var(--size-4);
+  --rounded-md: var(--size-6);
+  --rounded-lg: var(--size-8);
+  --rounded-xl: var(--size-12);
+  --rounded-2xl: var(--size-16);
+
+  --breakpoint-md: 768px;
 
   /* TOKENS */
-  /* Text */
-  --color-text-primary: var(--gray-950);
-  --color-text-secondary: var(--gray-900);
-  --color-text-accent: var(--gray-800);
+  --color-layout-bg: var(--gray-100);
+  --color-layout-surface: var(--gray-200);
+  --color-layout-border: var(--gray-300);
+  --color-layout-hover: rgb(202 198 210 / 40%);
 
-  /* Layout */
-  --color-bg: var(--gray-100);
-  --color-bg-surface: var(--gray-50);
+  --color-icon: var(--gray-950);
+
+  --color-text-title: var(--gray-950);
+  --color-text-subtitle: var(--gray-800);
+  --color-text-text: var(--gray-900);
+
+  --color-button-text: var(--gray-950);
+  --color-button-bg: var(--gray-100);
+
+  --color-input-text: var(--gray-700);
+  --color-input-bg: var(--gray-200);
+  --color-input-border-focus: var(--primary-500);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-layout-bg: var(--gray-900);
+    --color-layout-surface: var(--gray-800);
+    --color-layout-border: var(--gray-700);
+    --color-layout-hover: rgb(74 69 84 / 30%);
+
+    --color-icon: var(--gray-50);
+
+    --color-text-title: var(--gray-50);
+    --color-text-subtitle: var(--gray-200);
+    --color-text-text: var(--gray-100);
+
+    --color-button-text: var(--gray-50);
+    --color-button-bg: var(--gray-900);
+
+    --color-input-text: var(--gray-100);
+    --color-input-placeholder: var(--gray-300);
+    --color-input-bg: var(--gray-800);
+    --color-input-border-focus: var(--primary-300);
+  }
 }
