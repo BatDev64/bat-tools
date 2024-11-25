@@ -1,17 +1,7 @@
 @import './reset.css';
 @import './variables.css';
-@import './mixins.css';
+@import './baseStyles.css';
 
 body {
-  background-color: var(--gray-200);
-}
-
-.wrapper {
-  max-width: 1170px;
-  margin: * auto;
-  padding: * 0.5rem;
-
-  @media (width >= 768px) {
-    padding: * 1rem;
-  }
+  background-color: var(--color-layout-bg);
 }
