@@ -4,6 +4,10 @@ module.exports = {
     'postcss-nested': {},
     'postcss-utilities': {},
     'postcss-short': {},
+    'postcss-dark-theme-class': {
+      darkSelector: '[data-theme="dark"]',
+      lightSelector: '[data-theme="light"]'
+    },
     autoprefixer: {}
   }
 }
