@@ -39,8 +39,38 @@
 }
 .main {
   grid-area: main;
+  display: grid;
+  gap: var(--size-16);
+  @media (width >= 48rem) {
+    grid-template-columns: 1fr auto;
+  }
+  position: relative;
+}
+.section-one {
+  width: 100%;
+  display: grid;
+  gap: var(--size-16);
+  align-self: start;
+
+  @media (width >= 48rem) {
+    order: 2;
+    position: sticky;
+    top: var(--size-28);
+    z-index: 10;
+  }
+}
+.container_color-input {
+  display: flex;
+  gap: var(--size-8);
 }
 
+.section-two {
+  width: 100%;
+  min-width: 25%;
+  @media (width >= 48rem) {
+    order: 1;
+  }
+}
 .footer {
   grid-area: footer;
 }
