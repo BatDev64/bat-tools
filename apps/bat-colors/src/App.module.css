@@ -9,9 +9,35 @@
 
 .header {
   grid-area: header;
+  margin: var(--size-16) *;
 }
-
-.mian {
+.title {
+  font-size: var(--font-2xl);
+  color: var(--color-text-title);
+  text-wrap: balance;
+  font-weight: bold;
+  & span {
+    color: var(--primary-600);
+  }
+  @media (prefers-color-scheme: dark) {
+    & span {
+      color: var(--primary-300);
+    }
+  }
+}
+.subtitle {
+  font-size: var(--font-lg);
+  color: var(--color-text-subtitle);
+  text-wrap: balance;
+  margin-top: var(--size-6);
+  line-height: var(--size-28);
+  font-weight: semibold;
+}
+.link {
+  font-size: var(--font-lg);
+  color: #7ae6fe;
+}
+.main {
   grid-area: main;
 }
 
