@@ -1,2 +1,7 @@
-export { ColorSquare } from './ColorSquare/ColorSquare'
 export { ColorList } from './ColorList/ColorList'
+export * from './ColorList/ColorList'
+export * from './Button/Button'
+export * from './ColorPicker'
+export * from './Icons'
+export * from './Tabs/Tabs'
+export * from './Modal/Modal'
