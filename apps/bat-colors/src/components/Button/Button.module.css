@@ -1,0 +1,34 @@
+.size-button-md {
+  padding: var(--size-6) var(--size-12);
+  border-radius: var(--rounded);
+  font-size: var(--font-sm);
+}
+.size-button-xs {
+  padding: var(--size-4) var(--size-8);
+  font-size: var(--font-xs);
+}
+.size-button-icon-xs {
+  padding: var(--size-4);
+}
+.size-button-icon-sm {
+  padding: var(--size-6);
+}
+
+.rounded-button-sm {
+  border-radius: var(--rounded-sm);
+}
+.rounded-button-base {
+  border-radius: var(--rounded);
+}
+.rounded-button-md {
+  border-radius: var(--rounded-md);
+}
+.rounded-button-lg {
+  border-radius: var(--rounded-lg);
+}
+.rounded-button-xl {
+  border-radius: var(--rounded-xl);
+}
+.rounded-button-2xl {
+  border-radius: var(--rounded-2xl);
+}
