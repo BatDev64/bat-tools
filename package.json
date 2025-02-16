@@ -1,0 +1,19 @@
+{
+  "name": "bat-tools",
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.12.2",
+  "type": "module",
+  "description": "",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.5.1",
+    "turbo": "^2.4.2",
+    "vitest": "^3.0.5"
+  }
+}
