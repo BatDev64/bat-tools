@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "resolveJsonModule": true,
+
+    "allowJs": true,
+
+    "moduleDetection": "force",
+    "isolatedModules": true,
+
+    "noUncheckedIndexedAccess": true,
+
+    "outDir": "dist",
+    "rootDir": "src",
+
+    "baseUrl": ".",
+    "paths": {
+      "@models/*": ["src/models/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
