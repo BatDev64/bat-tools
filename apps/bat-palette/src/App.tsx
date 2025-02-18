@@ -2,6 +2,7 @@ import { Header } from '#components/Header/Header'
 import { usePalette } from '#hooks/usePalette'
 import { useCustomProperties } from '#hooks/useCustomProperties'
 import { PaletteList } from '#components/App/PaletteList.tsx'
+import { Navbar } from '#components/Navbar/Navbar.tsx'
 
 function App() {
   const { selectedColors } = usePalette()
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <div>
+      <Navbar />
       <div className='wrapper mt-8'>
         <Header />
       </div>
