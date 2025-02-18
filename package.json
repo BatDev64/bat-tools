@@ -6,7 +6,9 @@
   "description": "",
   "scripts": {
     "dev": "turbo run dev",
-    "build": "turbo run build"
+    "dev/b-p": "turbo run dev --filter=bat-palette",
+    "build": "turbo run build",
+    "build/b-p": "turbo run build --filter=bat-palette"
   },
   "keywords": [],
   "author": "",
