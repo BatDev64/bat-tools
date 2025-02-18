@@ -3,6 +3,7 @@ import { usePalette } from '#hooks/usePalette'
 import { useCustomProperties } from '#hooks/useCustomProperties'
 import { PaletteList } from '#components/App/PaletteList.tsx'
 import { Navbar } from '#components/Navbar/Navbar.tsx'
+import { ColorPreview } from '#components/ColorPreview/ColorPreview.tsx'
 
 function App() {
   const { selectedColors } = usePalette()
@@ -21,6 +22,7 @@ function App() {
       <main className='flex flex-col gap-4 mt-8 relative'>
         <div className='wrapper w-full flex flex-col gap-16'>
           <PaletteList />
+          <ColorPreview />
         </div>
       </main>
     </div>
