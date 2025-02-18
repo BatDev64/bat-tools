@@ -9,7 +9,7 @@ export const Navbar = () => {
   }
 
   return (
-    <div className='bg-white/30 dark:bg-black/30 backdrop-blur-sm top-0 sticky z-50 w-full py-4 border-y border-border dark:border-border-dark'>
+    <div className='bg-white/30 dark:bg-black/30 backdrop-blur-sm top-0 sticky z-50 w-full py-2.5 border-y border-border dark:border-border-dark'>
       <div className='wrapper flex items-center gap-2 sm:gap-4'>
         <div>
           <h2 className='font-black text-text-primary dark:text-text-primary-dark text-2xl sm:hidden'>
