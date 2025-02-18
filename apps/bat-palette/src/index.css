@@ -1,1 +1,107 @@
 @import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  /* Primary */
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  --color-primary-950: var(--color-primary-950);
+
+  /* Secondary */
+  --color-secondary-50: var(--color-secondary-50);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+  --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800);
+  --color-secondary-900: var(--color-secondary-900);
+  --color-secondary-950: var(--color-secondary-950);
+
+  /* Neutral */
+  --color-neutral-50: var(--color-neutral-50);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-200: var(--color-neutral-200);
+  --color-neutral-300: var(--color-neutral-300);
+  --color-neutral-400: var(--color-neutral-400);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-600: var(--color-neutral-600);
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-800: var(--color-neutral-800);
+  --color-neutral-900: var(--color-neutral-900);
+  --color-neutral-950: var(--color-neutral-950);
+
+  /* Base Colors */
+  --color-text-primary: var(--color-neutral-950);
+  --color-text-secondary: var(--color-neutral-800);
+  --color-text-body: var(--color-neutral-900);
+  --color-text-placeholder: var(--color-neutral-600);
+  --color-text-disabled: var(--color-neutral-500);
+  --color-text-muted: var(--color-neutral-700);
+  --color-text-soft: var(--color-neutral-600);
+  --color-text-link: var(--color-primary-600);
+  --color-text-link-hover: var(--color-primary-700);
+
+  --color-text-primary-dark: var(--color-neutral-50);
+  --color-text-secondary-dark: var(--color-neutral-300);
+  --color-text-body-dark: var(--color-neutral-100);
+  --color-text-placeholder-dark: var(--color-neutral-500);
+  --color-text-disabled-dark: var(--color-neutral-700);
+  --color-text-muted-dark: var(--color-neutral-400);
+  --color-text-soft-dark: var(--color-neutral-500);
+  --color-text-link-dark: var(--color-primary-400);
+  --color-text-link-hover-dark: var(--color-primary-600);
+
+  --color-text-white: var(--color-neutral-50);
+  --color-text-white-muted: var(--color-neutral-100);
+  --color-text-black: var(--color-neutral-950);
+  --color-text-black-muted: var(--color-neutral-900);
+
+  --color-border: var(--color-neutral-300);
+  --color-border-dark: var(--color-neutral-800);
+
+  --color-border-accent: var(--color-primary-500);
+  --color-border-accent-dark: var(--color-primary-400);
+
+  --color-surface: var(--color-neutral-50);
+  --color-surface-dark: var(--color-neutral-950);
+
+  --color-surface-muted: var(--color-neutral-200);
+  --color-surface-muted-dark: var(--color-neutral-900);
+
+  --color-overlay: var(--color-neutral-900);
+  --color-overlay-dark: var(--color-neutral-950);
+}
+@layer base {
+  body {
+    @apply h-dvh bg-linear-to-t bg-white dark:bg-black /* from-green-700 to-green-500 */;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  html,
+  * {
+    @apply [&::-webkit-scrollbar]:w-2.5
+  [&::-webkit-scrollbar-track]:rounded-full
+  [&::-webkit-scrollbar-track]:bg-neutral-300
+  [&::-webkit-scrollbar-thumb]:rounded-full
+  [&::-webkit-scrollbar-thumb]:bg-primary-500
+  dark:[&::-webkit-scrollbar-track]:bg-neutral-800
+  dark:[&::-webkit-scrollbar-thumb]:bg-primary-400;
+  }
+}
+
+@layer components {
+  .wrapper {
+    @apply max-w-3xl mx-auto px-2 sm:px-2.5 md:px-4;
+  }
+  }
