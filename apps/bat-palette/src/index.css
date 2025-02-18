@@ -104,4 +104,18 @@
   .wrapper {
     @apply max-w-3xl mx-auto px-2 sm:px-2.5 md:px-4;
   }
+.color-picker_custom {
+  .react-colorful {
+    @apply w-auto rounded-none flex flex-col gap-2;
+  }
+  .react-colorful__saturation {
+    @apply border-none rounded-xl;
+  }
+  .react-colorful__hue {
+    @apply h-6 rounded-xl;
+  }
+  .react-colorful__saturation-pointer,
+  .react-colorful__hue-pointer {
+    @apply size-5 rounded-full border-4;
+  }
   }
