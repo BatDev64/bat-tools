@@ -1,6 +1,7 @@
 import { Header } from '#components/Header/Header'
 import { usePalette } from '#hooks/usePalette'
 import { useCustomProperties } from '#hooks/useCustomProperties'
+import { PaletteList } from '#components/App/PaletteList.tsx'
 
 function App() {
   const { selectedColors } = usePalette()
@@ -15,6 +16,11 @@ function App() {
       <div className='wrapper mt-8'>
         <Header />
       </div>
+      <main className='flex flex-col gap-4 mt-8 relative'>
+        <div className='wrapper w-full flex flex-col gap-16'>
+          <PaletteList />
+        </div>
+      </main>
     </div>
   )
 }
