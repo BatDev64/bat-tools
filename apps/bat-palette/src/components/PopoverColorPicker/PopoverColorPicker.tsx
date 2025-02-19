@@ -17,7 +17,6 @@ export const PopoverColorPicker = ({ mainColor, onChangeColor }: Props) => {
     <Popover>
       <PopoverTrigger asChild>
         <Button
-          className='border-none border border-transparent'
           size='icon-lg'
           variant='neutral'
           rounded='full'>
