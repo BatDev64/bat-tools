@@ -9,6 +9,9 @@ import { User } from './User'
 export const ColorPreview = () => {
   return (
     <section className='flex flex-col gap-4'>
+      <h2 className='text-lg sm:text-xl md:text-2xl font-semibold text-text-primary dark:text-text-primary-dark'>
+        Examples
+      </h2>
       <div className='flex flex-col gap-4 sm:flex-row '>
         <div className='flex flex-col gap-4 w-full sm:max-w-3xs'>
           <User />
